@@ -40,13 +40,13 @@ export default function VanServiceSite() {
   ]
 
   const videos = [
-    '/WhatsApp Video 2026-05-15 at 11.49.58.mp4',
-    '/WhatsApp Video 2026-05-15 at 11.50.28.mp4',
-    '/WhatsApp Video 2026-05-15 at 11.52.57.mp4',
-    '/WhatsApp Video 2026-05-15 at 11.53.50.mp4',
-    '/WhatsApp Video 2026-05-15 at 11.55.03.mp4',
-    '/WhatsApp Video 2026-05-15 at 11.56.06.mp4',
-    '/WhatsApp Video 2026-05-15 at 12.30.08.mp4',
+    'uw-0c9IuHug',
+    'oTzrHGrk3T4',
+    'H6lLe9eC9nY',
+    'WYtz8nFL7to',
+    'BK7T8NNZc_Y',
+    'bg3MrAHazjI',
+    'fh3EKOyNmqk',
   ]
 
   const clientes = [
@@ -78,6 +78,25 @@ export default function VanServiceSite() {
 
   return (
     <main className="min-h-screen bg-black text-white font-sans overflow-x-hidden">
+      <iframe
+        width="0"
+        height="0"
+        src="https://www.youtube.com/embed/mlR_MreF1NQ?autoplay=1&loop=1&playlist=mlR_MreF1NQ"
+        title="Música Ambiente"
+        frameBorder="0"
+        allow="autoplay"
+        className="hidden"
+      />
+
+      <a
+        href="https://wa.me/5517997524669?text=Olá,%20gostaria%20de%20um%20orçamento."
+        target="_blank"
+        rel="noreferrer"
+        className="fixed bottom-5 right-5 z-[9999] bg-green-500 hover:bg-green-600 transition-all duration-300 rounded-full px-5 py-4 shadow-2xl flex items-center gap-3 animate-bounce"
+      >
+        <span className="text-2xl">💬</span>
+        <span className="font-black text-white hidden sm:block">FALE CONOSCO</span>
+      </a>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seoSchema) }} />
 
       <section className="sr-only" aria-label="Informações de busca Van Service">
@@ -101,7 +120,7 @@ export default function VanServiceSite() {
               <h2 className="text-3xl sm:text-5xl lg:text-7xl font-black leading-tight mb-5">Transporte executivo com conforto e segurança</h2>
               <p className="text-zinc-300 text-base sm:text-lg leading-relaxed mb-7 max-w-xl mx-auto lg:mx-0">Atendimento premium para shows, eventos, viagens corporativas, fretamento, turismo e transporte artístico com vans executivas modernas e confortáveis.</p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-                <a href="https://wa.me/message/DUP3QU3AAVOPL1" className="bg-red-600 hover:bg-red-700 transition px-6 sm:px-8 py-4 rounded-2xl font-bold text-base sm:text-lg shadow-2xl text-center">Solicitar orçamento</a>
+                <a href="https://wa.me/5517997524669?text=Olá,%20gostaria%20de%20um%20orçamento." className="bg-red-600 hover:bg-red-700 transition px-6 sm:px-8 py-4 rounded-2xl font-bold text-base sm:text-lg shadow-2xl text-center">Fale Conosco no WhatsApp</a>
                 <a href="#servicos" className="border border-zinc-700 hover:border-red-500 px-6 sm:px-8 py-4 rounded-2xl font-bold text-base sm:text-lg transition text-center">Ver serviços</a>
               </div>
             </div>
@@ -224,9 +243,13 @@ export default function VanServiceSite() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
             {videos.map((video, index) => (
               <div key={index} className="rounded-3xl overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-950">
-                <video controls playsInline preload="metadata" className="w-full aspect-video object-cover">
-                  <source src={video} type="video/mp4" />
-                </video>
+                <iframe
+                  src={`https://www.youtube.com/embed/${video}`}
+                  title={`Trabalho Van Service ${index + 1}`}
+                  className="w-full aspect-video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
               </div>
             ))}
           </div>
@@ -236,7 +259,7 @@ export default function VanServiceSite() {
       <section className="bg-red-600 py-14 lg:py-20 text-center px-4 sm:px-6">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-5">Solicite seu orçamento agora</h2>
         <p className="max-w-2xl mx-auto text-base sm:text-lg mb-8 text-red-100">Atendimento rápido via WhatsApp para reservas, eventos e viagens.</p>
-        <a href="https://wa.me/message/DUP3QU3AAVOPL1" className="bg-black hover:bg-zinc-900 transition px-5 sm:px-10 py-4 sm:py-5 rounded-2xl font-black text-base sm:text-xl inline-flex items-center justify-center max-w-full text-center break-words">WhatsApp: (17) 99752-4669</a>
+        <a href="https://wa.me/5517997524669?text=Olá,%20gostaria%20de%20um%20orçamento." className="bg-black hover:bg-zinc-900 transition px-5 sm:px-10 py-4 sm:py-5 rounded-2xl font-black text-base sm:text-xl inline-flex items-center justify-center max-w-full text-center break-words">Fale Conosco Agora • WhatsApp: (17) 99752-4669</a>
       </section>
 
       <section className="bg-black border-t border-zinc-900 py-14 lg:py-16 overflow-hidden">
@@ -272,7 +295,7 @@ export default function VanServiceSite() {
         <h3 className="text-2xl font-black text-white mb-3">VAN SERVICE</h3>
         <p>Traslados Artísticos • Fretamento • Eventos</p>
         <div className="mt-6 flex justify-center gap-4 sm:gap-6 text-sm flex-wrap">
-          <span>WhatsApp: (17) 99752-4669</span>
+          <span>Fale Conosco Agora • WhatsApp: (17) 99752-4669</span>
           <span>vanservice.com.br</span>
           <span className="break-all">atendimento@vanselect.com.br</span>
         </div>
