@@ -134,7 +134,7 @@ export default function VanServiceSite() {
         <iframe
           width="1"
           height="1"
-          src="https://www.youtube.com/embed/mlR_MreF1NQ?autoplay=1&loop=1&playlist=mlR_MreF1NQ"
+          src="https://www.youtube.com/embed/mlR_MreF1NQ?autoplay=1&loop=1&playlist=mlR_MreF1NQ&playsinline=1"
           title="Música Ambiente Van Service"
           frameBorder="0"
           allow="autoplay; encrypted-media"
@@ -156,9 +156,9 @@ export default function VanServiceSite() {
       <button
         type="button"
         onClick={() => setMusicOn(true)}
-        className="fixed bottom-5 left-5 z-[9998] bg-zinc-900/90 hover:bg-red-600 border border-red-500/40 text-white rounded-full px-4 py-3 shadow-2xl text-xs sm:text-sm font-bold"
+        className="fixed bottom-5 left-5 z-[9998] bg-red-700 hover:bg-red-600 border border-white/20 text-white rounded-full px-5 py-4 shadow-2xl text-sm sm:text-base font-black"
       >
-        {musicOn ? 'Música ativada' : 'Ativar música'}
+        {musicOn ? 'Música tocando' : '▶ Tocar música'}
       </button>
 
       <header className="sticky top-0 z-50 bg-black/95 backdrop-blur-xl border-b border-red-700/50">
@@ -194,7 +194,7 @@ export default function VanServiceSite() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-8 items-center py-8 lg:py-10 border-b border-red-900/60">
             <div className="flex justify-center">
-              <img src="/image_6ed670ec-removebg-preview.png" alt="Transfer Olímpia Van Service" className="w-72 sm:w-96 lg:w-[460px] object-contain drop-shadow-2xl" />
+              <img src="/image_6ed670ec-removebg-preview.png" alt="Transfer Olímpia Van Service" className="w-72 sm:w-96 lg:w-[460px] object-contain drop-shadow-2xl bg-transparent" />
             </div>
             <div className="text-center lg:text-left">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black italic tracking-wide leading-tight">VAN SERVICE</h1>
@@ -208,7 +208,7 @@ export default function VanServiceSite() {
 
           <div className="grid lg:grid-cols-2 gap-8 items-center py-8 lg:py-10">
             <div className="flex justify-center">
-              <img src="/image_2b2bcd07__1_-removebg-preview.png" alt="Shuttle Aeroporto Van Service" className="w-72 sm:w-96 lg:w-[460px] object-contain drop-shadow-2xl" />
+              <img src="/image_2b2bcd07__1_-removebg-preview.png" alt="Shuttle Aeroporto Van Service" className="w-72 sm:w-96 lg:w-[460px] object-contain drop-shadow-2xl bg-transparent" />
             </div>
             <div className="text-center lg:text-left">
               <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black italic tracking-wide leading-tight">VAN SERVICE</h2>
