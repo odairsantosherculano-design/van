@@ -2,7 +2,9 @@ import { useState } from 'react'
 
 export default function VanServiceSite() {
   const [musicOn, setMusicOn] = useState(false)
-  const whatsappLink = 'https://wa.me/5517997524669?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20transporte%20com%20van.'
+
+  const whatsappLink =
+    'https://wa.me/5517997524669?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20transporte%20com%20van.'
 
   const clientes = [
     '/Captura de Tela (526).png',
@@ -43,19 +45,14 @@ export default function VanServiceSite() {
     '/WhatsApp Image 2026-05-13 at 15.02.43.jpeg',
   ]
 
+  // Fotos antigas permitidas no final. Removidas as fotos marcadas com X amarelo.
   const historiaFotos = [
     '/01 inicio.jpeg',
     '/02 inicio.jpeg',
-    '/03 inicio.jpeg',
     '/04 inicio.jpeg',
     '/WhatsApp Image 2026-05-15 at 13.51.56 (3).jpeg',
-    '/WhatsApp Image 2026-05-15 at 13.51.57 (1).jpeg',
-    '/WhatsApp Image 2026-05-15 at 13.51.57 (2).jpeg',
-    '/WhatsApp Image 2026-05-15 at 13.51.57 (3).jpeg',
     '/WhatsApp Image 2026-05-15 at 13.51.57.jpeg',
-    '/WhatsApp Image 2026-05-15 at 13.51.58 (2).jpeg',
     '/WhatsApp Image 2026-05-15 at 13.51.58 (3).jpeg',
-    '/WhatsApp Image 2026-05-15 at 13.51.58.jpeg',
     '/WhatsApp Image 2026-05-15 at 13.51.59.jpeg',
   ]
 
@@ -131,15 +128,10 @@ export default function VanServiceSite() {
       </section>
 
       {musicOn && (
-        <iframe
-          width="1"
-          height="1"
-          src="https://www.youtube.com/embed/mlR_MreF1NQ?autoplay=1&loop=1&playlist=mlR_MreF1NQ&playsinline=1"
-          title="Música Ambiente Van Service"
-          frameBorder="0"
-          allow="autoplay; encrypted-media"
-          className="fixed -left-10 -top-10 opacity-0 pointer-events-none"
-        />
+        <audio autoPlay loop playsInline className="hidden">
+          <source src="/musica-ambiente.mp4" type="audio/mp4" />
+          <source src="/musica-ambiente.mp3" type="audio/mpeg" />
+        </audio>
       )}
 
       <a
@@ -158,7 +150,7 @@ export default function VanServiceSite() {
         onClick={() => setMusicOn(true)}
         className="fixed bottom-5 left-5 z-[9998] bg-red-700 hover:bg-red-600 border border-white/20 text-white rounded-full px-5 py-4 shadow-2xl text-sm sm:text-base font-black"
       >
-        {musicOn ? 'Música tocando' : '▶ Tocar música'}
+        {musicOn ? 'Música tocando' : '♫ Tocar música'}
       </button>
 
       <header className="sticky top-0 z-50 bg-black/95 backdrop-blur-xl border-b border-red-700/50">
@@ -170,12 +162,12 @@ export default function VanServiceSite() {
 
           <div className="hidden lg:flex items-center gap-7 text-sm font-black">
             <a href="#home" className="text-red-500">HOME</a>
-            <a href="#servicos" className="hover:text-red-500">SERVIÇOS</a>
             <a href="#frota" className="hover:text-red-500">FROTA</a>
             <a href="#clientes" className="hover:text-red-500">CLIENTES</a>
-            <a href="#historia" className="hover:text-red-500">HISTÓRIA</a>
-            <a href="#galeria" className="hover:text-red-500">GALERIA</a>
             <a href="#videos" className="hover:text-red-500">VÍDEOS</a>
+            <a href="#servicos" className="hover:text-red-500">SERVIÇOS</a>
+            <a href="#galeria" className="hover:text-red-500">GALERIA</a>
+            <a href="#historia" className="hover:text-red-500">HISTÓRIA</a>
             <a href="#contato" className="hover:text-red-500">CONTATO</a>
           </div>
 
@@ -249,27 +241,22 @@ export default function VanServiceSite() {
         <style>{`@keyframes scrollClientes { from { transform: translateX(0); } to { transform: translateX(-50%); } }`}</style>
       </section>
 
-      <section id="historia" className="bg-[linear-gradient(120deg,#020202,#0d0d0d,#160000)] border-b border-red-900/60 px-4 sm:px-6 py-14 lg:py-20">
+      <section id="videos" className="bg-black px-4 sm:px-6 py-14 lg:py-20 border-b border-red-900/60">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-10 items-center mb-12">
-            <div>
-              <p className="text-red-500 font-black tracking-widest uppercase mb-3">Desde 2006</p>
-              <h2 className="text-3xl sm:text-5xl font-black mb-6">NOSSA HISTÓRIA</h2>
-              <div className="space-y-5 text-zinc-300 leading-relaxed text-base sm:text-lg">
-                <p>A jornada da Van Service começou em 2006, com a aquisição da nossa primeira van. Inicialmente, atuamos no transporte coletivo de passageiros na cidade do Rio de Janeiro.</p>
-                <p>Em 2011, recebemos o desafio de realizar o transfer artístico com vans no Rock in Rio. Essa experiência transformou nossa estratégia e nos levou definitivamente para o mercado de fretamento artístico, viagens, transporte corporativo e turismo.</p>
-                <p>Hoje, somos uma marca consolidada, com atuação no Rio de Janeiro, São Paulo, São José do Rio Preto e região. São mais de 2 milhões de quilômetros rodados com segurança, pontualidade, competência e exclusividade.</p>
-                <p className="text-white font-semibold">Para a Van Service, você não é apenas um passageiro. Você faz parte da nossa história.</p>
-              </div>
-              <FaleConosco label="FALE COM A VAN SERVICE" className="mt-8" />
-            </div>
-            <img src="/WhatsApp Image 2026-05-13 at 15.02.43 (3).jpeg" alt="Van Service na estrada" className="rounded-3xl border border-red-900/60 w-full h-72 sm:h-96 object-cover shadow-2xl" />
+          <div className="text-center mb-10">
+            <h2 className="text-3xl sm:text-4xl font-black">VÍDEOS</h2>
+            <p className="text-zinc-400 mt-3">Alguns de nossos trabalhos em vídeo.</p>
           </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            {historiaFotos.map((img, index) => (
-              <div key={index} className="rounded-2xl overflow-hidden border border-zinc-800 bg-black shadow-xl">
-                <img src={img} alt="Início da Van Service" className="w-full h-40 sm:h-52 object-cover" loading="lazy" />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {videos.map((video, index) => (
+              <div key={index} className="rounded-3xl overflow-hidden border border-red-900/70 shadow-2xl bg-zinc-950">
+                <iframe
+                  src={`https://www.youtube.com/embed/${video}`}
+                  title={`Trabalho Van Service ${index + 1}`}
+                  className="w-full aspect-video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
               </div>
             ))}
           </div>
@@ -317,22 +304,34 @@ export default function VanServiceSite() {
         </div>
       </section>
 
-      <section id="videos" className="bg-black px-4 sm:px-6 py-14 lg:py-20">
+      <section id="historia" className="bg-[linear-gradient(120deg,#020202,#0d0d0d,#160000)] border-b border-red-900/60 px-4 sm:px-6 py-14 lg:py-20">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl font-black">VÍDEOS</h2>
-            <p className="text-zinc-400 mt-3">Alguns de nossos trabalhos em vídeo.</p>
+          <div className="grid lg:grid-cols-2 gap-10 items-center mb-12">
+            <div>
+              <p className="text-red-500 font-black tracking-widest uppercase mb-3">Desde 2006</p>
+              <h2 className="text-3xl sm:text-5xl font-black mb-6">NOSSA HISTÓRIA</h2>
+              <div className="space-y-5 text-zinc-300 leading-relaxed text-base sm:text-lg">
+                <p>A jornada da Van Service começou em 2006, com a aquisição da nossa primeira van. Inicialmente, atuamos no transporte coletivo de passageiros na cidade do Rio de Janeiro.</p>
+                <p>Em 2011, recebemos o desafio de realizar o transfer artístico com vans no Rock in Rio. Essa experiência transformou nossa estratégia e nos levou definitivamente para o mercado de fretamento artístico, viagens, transporte corporativo e turismo.</p>
+                <p>Hoje, somos uma marca consolidada, com atuação no Rio de Janeiro, São Paulo, São José do Rio Preto e região. São mais de 2 milhões de quilômetros rodados com segurança, pontualidade, competência e exclusividade.</p>
+                <p className="text-white font-semibold">Para a Van Service, você não é apenas um passageiro. Você faz parte da nossa história.</p>
+              </div>
+              <FaleConosco label="FALE COM A VAN SERVICE" className="mt-8" />
+            </div>
+            <img src="/WhatsApp Image 2026-05-13 at 15.02.43 (3).jpeg" alt="Van Service na estrada" className="rounded-3xl border border-red-900/60 w-full h-72 sm:h-96 object-cover shadow-2xl" />
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {videos.map((video, index) => (
-              <div key={index} className="rounded-3xl overflow-hidden border border-red-900/70 shadow-2xl bg-zinc-950">
-                <iframe
-                  src={`https://www.youtube.com/embed/${video}`}
-                  title={`Trabalho Van Service ${index + 1}`}
-                  className="w-full aspect-video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
+
+          <div className="text-center mb-8">
+            <h3 className="text-2xl sm:text-3xl font-black">O INÍCIO DA NOSSA TRAJETÓRIA</h3>
+            <p className="text-zinc-400 mt-3 max-w-3xl mx-auto">
+              Imagens históricas separadas da frota atual, mostrando o começo da Van Service e a evolução da nossa empresa.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            {historiaFotos.map((img, index) => (
+              <div key={index} className="rounded-2xl overflow-hidden border border-zinc-800 bg-black shadow-xl">
+                <img src={img} alt="Início da Van Service" className="w-full h-40 sm:h-52 object-cover" loading="lazy" />
               </div>
             ))}
           </div>
